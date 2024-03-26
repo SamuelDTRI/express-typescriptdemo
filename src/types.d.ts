@@ -9,6 +9,13 @@ export interface diaryEntry {
   comment: string;
 }
 
+// export type NonSensitiveInfoDiaryEntry = Pick<
+//   diaryEntry,
+//   "id" | "date" | "weather" | "visibility" // pirmer tipo de utilidad que se recomineda para la infromacion de tipos y la menor cantidad de los mismos posible.
+// >;
+
+export type NonSensitiveInfoDiaryEntry = Omit<diaryEntry, "comment">;
+
 interface SpecialyDiaryEntry extends diaryEntry {
   //mas recomendado
   flightNumber: number;
